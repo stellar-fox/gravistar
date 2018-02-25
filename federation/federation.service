@@ -1,0 +1,17 @@
+[Unit]
+Description=Federation
+After=network.target
+
+[Service]
+ExecStart=/home/syntaxval/StellarFox/federation/federation
+Restart=always
+User=nobody
+# Use 'nogroup' group for Ubuntu/Debian
+# use 'nobody' group for Fedora
+Group=nobody
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/home/syntaxval/StellarFox/federation
+
+[Install]
+WantedBy=multi-user.target
