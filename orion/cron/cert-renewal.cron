@@ -1,0 +1,3 @@
+# Runs certificate renewal (by name) twice a day at random minute and logs the results to local log file.
+# To renew all certificates remove --cert-name.
+0 0,12 * * * python -c 'import random; import time; time.sleep(random.random() * 3600)' && certbot renew --cert-name testnet.stellarfox.net --nginx >> ~/var/log/cron
